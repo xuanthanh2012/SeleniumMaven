@@ -23,9 +23,7 @@ public class orangeHRM {
 	
 	@DataProvider
     Object[][] testData() {
-        return new Object[][]{
-                {"Admin", "admin123"}
-        };
+        return new Object[][]{ {"Admin", "admin123"} };
     }
 	
 	@BeforeClass
