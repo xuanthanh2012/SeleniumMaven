@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-16T18:00:26 ICT" name="Default suite" finished-at="2023-05-16T18:01:06 ICT" duration-ms="40362">
+  <suite started-at="2023-05-17T14:27:38 ICT" name="Default suite" finished-at="2023-05-17T14:28:20 ICT" duration-ms="41816">
     <groups>
     </groups>
-    <test started-at="2023-05-16T18:00:26 ICT" name="Default test" finished-at="2023-05-16T18:01:06 ICT" duration-ms="40362">
+    <test started-at="2023-05-17T14:27:38 ICT" name="Default test" finished-at="2023-05-17T14:28:20 ICT" duration-ms="41816">
       <class name="testpackage.orangeHRM">
-        <test-method is-config="true" signature="BeforeTest()[pri:0, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-16T18:00:26 ICT" name="BeforeTest" finished-at="2023-05-16T18:00:28 ICT" duration-ms="1766" status="PASS">
+        <test-method is-config="true" signature="BeforeTest()[pri:0, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-17T14:27:38 ICT" name="BeforeTest" finished-at="2023-05-17T14:27:40 ICT" duration-ms="1880" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeTest -->
-        <test-method signature="TestNav()[pri:0, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-16T18:00:28 ICT" name="TestNav" finished-at="2023-05-16T18:01:02 ICT" duration-ms="34469" status="PASS">
+        <test-method signature="TestNav()[pri:0, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-17T14:27:40 ICT" name="TestNav" finished-at="2023-05-17T14:28:15 ICT" duration-ms="35203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestNav -->
-        <test-method signature="TestLogin()[pri:1, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-16T18:01:02 ICT" name="TestLogin" finished-at="2023-05-16T18:01:04 ICT" duration-ms="1779" status="PASS">
+        <test-method signature="TestLogin()[pri:1, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-17T14:28:15 ICT" name="TestLogin" finished-at="2023-05-17T14:28:18 ICT" duration-ms="2181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestLogin -->
-        <test-method signature="TestGetUsername()[pri:2, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-16T18:01:04 ICT" name="TestGetUsername" finished-at="2023-05-16T18:01:04 ICT" duration-ms="379" status="PASS">
+        <test-method signature="TestGetUsername()[pri:2, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-17T14:28:18 ICT" name="TestGetUsername" finished-at="2023-05-17T14:28:18 ICT" duration-ms="414" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestGetUsername -->
-        <test-method signature="TestNavtoAdmin()[pri:3, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-16T18:01:04 ICT" name="TestNavtoAdmin" finished-at="2023-05-16T18:01:06 ICT" duration-ms="1756" status="PASS">
+        <test-method signature="TestNavtoAdmin()[pri:3, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-17T14:28:18 ICT" name="TestNavtoAdmin" finished-at="2023-05-17T14:28:20 ICT" duration-ms="1912" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestNavtoAdmin -->
-        <test-method is-config="true" signature="AfterTest()[pri:0, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-16T18:01:06 ICT" name="AfterTest" finished-at="2023-05-16T18:01:06 ICT" duration-ms="178" status="PASS">
+        <test-method is-config="true" signature="AfterTest()[pri:0, instance:testpackage.orangeHRM@121314f7]" started-at="2023-05-17T14:28:20 ICT" name="AfterTest" finished-at="2023-05-17T14:28:20 ICT" duration-ms="187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterTest -->

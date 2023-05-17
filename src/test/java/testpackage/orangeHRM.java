@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -29,7 +30,7 @@ public class orangeHRM {
 	public void TestNav() {
 		driver.get(Url);
 		String currentUrl = driver.getCurrentUrl();
-		System.out.println(currentUrl);
+		Assert.assertEquals(currentUrl, "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 	}
 	
 	@Test (priority = 1)
@@ -41,7 +42,7 @@ public class orangeHRM {
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		String title = driver.getTitle();
-		System.out.println(title);
+		Assert.assertEquals(title, "OrangeHRM");
 	}
 	
 	@Test (priority = 2)
@@ -49,6 +50,7 @@ public class orangeHRM {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		String getUsername = driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).getText();
 		System.out.println(getUsername);		
+		Assert.assertNotEquals(getUsername, "");
 	}
 	
 	@Test (priority = 3)
@@ -58,11 +60,12 @@ public class orangeHRM {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[text()='Admin']")));
 		String verifyAdminPage = driver.getCurrentUrl();
 		System.out.println(verifyAdminPage);
+		Assert.assertEquals(verifyAdminPage, "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 	}
 	
 	@AfterTest
 	public void AfterTest() {
-		driver.quit();
+		driver.quit(); 
 		System.out.println("After Test");
 	}
 	
