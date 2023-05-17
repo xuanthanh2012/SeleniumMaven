@@ -9,8 +9,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class orangeHRM {
@@ -18,7 +21,14 @@ public class orangeHRM {
 	public String driverPath = "D://chromedriver.exe";
 	public WebDriver driver;
 	
-	@BeforeTest
+	@DataProvider
+    Object[][] testData() {
+        return new Object[][]{
+                {"Admin", "admin123"}
+        };
+    }
+	
+	@BeforeClass
 	public void BeforeTest() {
 		System.out.println("Before Test");
 		System.setProperty("webdriver.chrome.driver", driverPath);
@@ -33,13 +43,13 @@ public class orangeHRM {
 		Assert.assertEquals(currentUrl, "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 	}
 	
-	@Test (priority = 1)
-	public void TestLogin() {
+	@Test (priority = 1, dataProvider = "testData")
+	public void TestLogin(String username, String password) {
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		WebElement elementInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='username']")));
-		elementInput.sendKeys("Admin");
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
+		elementInput.sendKeys(username);
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(password);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		String title = driver.getTitle();
 		Assert.assertEquals(title, "OrangeHRM");
@@ -60,10 +70,10 @@ public class orangeHRM {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[text()='Admin']")));
 		String verifyAdminPage = driver.getCurrentUrl();
 		System.out.println(verifyAdminPage);
-		Assert.assertEquals(verifyAdminPage, "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
+		Assert.assertEquals(verifyAdminPage, "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");		
 	}
 	
-	@AfterTest
+	@AfterClass
 	public void AfterTest() {
 		driver.quit(); 
 		System.out.println("After Test");
