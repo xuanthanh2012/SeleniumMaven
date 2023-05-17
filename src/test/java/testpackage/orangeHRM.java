@@ -13,18 +13,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
+import resources.DP;
 import org.testng.annotations.Test;
 
 public class orangeHRM {
 	public String Url = "https://opensource-demo.orangehrmlive.com/";
 	public String driverPath = "D://chromedriver.exe";
 	public WebDriver driver;
-	
-	@DataProvider
-    Object[][] testData() {
-        return new Object[][]{ {"Admin", "admin123"} };
-    }
 	
 	@BeforeClass
 	public void BeforeTest() {
@@ -41,7 +36,7 @@ public class orangeHRM {
 		Assert.assertEquals(currentUrl, "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 	}
 	
-	@Test (priority = 1, dataProvider = "testData")
+	@Test (priority = 1, dataProvider = "testData", dataProviderClass = DP.class)
 	public void TestLogin(String username, String password) {
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
