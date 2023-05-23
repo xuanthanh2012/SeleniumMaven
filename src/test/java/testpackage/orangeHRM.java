@@ -14,6 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import resources.DP;
+import resources.PageElements;
 import org.testng.annotations.Test;
 
 public class orangeHRM {
